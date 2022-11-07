@@ -1,8 +1,8 @@
 import 'package:ebuy/Widgets/background.dart';
 import 'package:ebuy/consts/list.dart';
 
-import '../../../consts/consts.dart';
-import '../categorydetails.dart';
+import '../../consts/consts.dart';
+import 'categorydetails.dart';
 
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});

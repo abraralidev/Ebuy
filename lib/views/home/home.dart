@@ -4,7 +4,7 @@ import '../../consts/consts.dart';
 import '../../controllers/home_controllers.dart';
 import '../AccountScreen/accountscreen.dart';
 import '../CartScreen/cartscreen.dart';
-import '../CategoriesScreen/CategoriesScreen/categories_screen.dart';
+import '../CategoriesScreen/categories_screen.dart';
 import '../HomeScreen/homescreen.dart';
 
 class Home extends StatelessWidget {

@@ -49,28 +49,27 @@ const featuredcategorytitle2 = [
 ];
 // ------categorylist
 const categorylist = [
-  womencloth,
   menClothingFashion,
   compAccess,
   autoMobile,
   kidtoys,
   sports,
-  jewelry,
   cellphone,
+  jewelry,
+  womencloth,
   funiture,
 ];
 
 // ------categorylist Images
 
 const categorylistImages = [
-imgFc1,
-imgFc2,
-imgFc3,
-imgFc4,
-imgFc5,
-imgFc6,
-imgFc7,
-imgFc8,
-imgFc9,
-
+  imgFc1,
+  imgFc2,
+  imgFc3,
+  imgFc4,
+  imgFc5,
+  imgFc6,
+  imgFc7,
+  imgFc8,
+  imgFc9,
 ];
