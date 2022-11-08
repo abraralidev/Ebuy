@@ -73,3 +73,14 @@ const categorylistImages = [
   imgFc8,
   imgFc9,
 ];
+
+// ------Item Detail page text
+
+const itemDetailPageText = [
+videos,
+reviews,
+sellerPolicy,
+returnPolicy,
+supportPolicy
+
+];

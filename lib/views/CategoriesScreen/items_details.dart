@@ -1,4 +1,5 @@
 import 'package:ebuy/Widgets/itembuttons.dart';
+import 'package:ebuy/consts/list.dart';
 
 import '../../consts/consts.dart';
 
@@ -36,6 +37,7 @@ class ItemsDetails extends StatelessWidget {
               child: Container(
             padding: const EdgeInsets.all(10),
             child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -116,7 +118,7 @@ class ItemsDetails extends StatelessWidget {
                         children: [
                           SizedBox(
                             width: 100,
-                            child: 'Color:'
+                            child: 'Color: '
                                 .text
                                 // .fontFamily(semibold)
                                 .color(textfeildgrey)
@@ -142,7 +144,7 @@ class ItemsDetails extends StatelessWidget {
                         children: [
                           SizedBox(
                             width: 100,
-                            child: 'Color:'
+                            child: 'Quantity: '
                                 .text
                                 // .fontFamily(semibold)
                                 .color(textfeildgrey)
@@ -151,15 +153,126 @@ class ItemsDetails extends StatelessWidget {
                           ),
                           10.widthBox,
                           Row(children: [
-                            TextButton(
+                            IconButton(
                               onPressed: () {},
-                              child: Text(''),
+                              icon: const Icon(Icons.remove),
                             ),
+                            '0'
+                                .text
+                                .size(16)
+                                .color(darkFontGrey)
+                                .fontFamily(bold)
+                                .make(),
+                            IconButton(
+                              onPressed: () {},
+                              icon: const Icon(Icons.add),
+                            ),
+                            10.widthBox,
+                            '(0 available)'
+                                .text
+                                .size(16)
+                                .color(textfeildgrey)
+                                .make(),
                           ])
+                        ],
+                      ).box.padding(const EdgeInsets.all(8)).make(),
+//--------------------------Total Row-----------------------------
+                      Row(
+                        children: [
+                          SizedBox(
+                            width: 100,
+                            child: 'Total: '
+                                .text
+                                // .fontFamily(semibold)
+                                .color(textfeildgrey)
+                                // .size(16)
+                                .make(),
+                          ),
+                          '\$0.00'
+                              .text
+                              .color(redColor)
+                              .size(16)
+                              .fontFamily(bold)
+                              .make()
                         ],
                       ).box.padding(const EdgeInsets.all(8)).make(),
                     ],
                   ).box.white.shadowSm.make(),
+// --------------------Description Section here
+                  20.heightBox,
+                  'Description'
+                      .text
+                      .color(darkFontGrey)
+                      .fontFamily(semibold)
+                      .make(),
+                  20.heightBox,
+
+                  'this is the description of the product, this is the description of the product, this is the description of the product, this is the description of the product, this is the description of the product, this is the description of the product, this is the description of the product,'
+                      .text
+                      .color(darkFontGrey)
+                      // .fontFamily(semibold)
+                      .make(),
+                  20.heightBox,
+
+                  Column(
+                    // shrinkWrap: true,
+                    children: List.generate(
+                        5,
+                        (index) => ListTile(
+                              title: itemDetailPageText[index]
+                                  .text
+                                  .color(darkFontGrey)
+                                  // .fontFamily(semibold)
+                                  .make(),
+                              trailing: const Icon(Icons.arrow_forward),
+                            )
+                                .box
+                                .padding(const EdgeInsets.all(8))
+                                .white
+                                .shadowSm
+                                .make()),
+                  ),
+                  20.heightBox,
+                  'Product may you also like'.text.fontFamily(bold).make(),
+                  20.heightBox,
+   //---------------------Copy of widgets from home screen---------------------------------               
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: List.generate(
+                        6,
+                        (index) => Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Image.asset(
+                              imgP1,
+                              width: 150,
+                              fit: BoxFit.cover,
+                            ),
+                            10.heightBox,
+                            'Laptop 4 / 128'
+                                .text
+                                .fontFamily(semibold)
+                                .color(darkFontGrey)
+                                .make(),
+                            10.heightBox,
+                            '\$600'
+                                .text
+                                .fontFamily(bold)
+                                .size(16)
+                                .color(redColor)
+                                .make(),
+                          ],
+                        )
+                            .box
+                            .white
+                            .roundedSM
+                            .margin(const EdgeInsets.symmetric(horizontal: 8))
+                            .padding(const EdgeInsets.all(8))
+                            .make(),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),

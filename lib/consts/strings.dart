@@ -39,11 +39,20 @@ const search = 'Search Anything....',
 
 // category strings
 const womencloth = 'Women Clothing',
-menClothingFashion='Men Clothing Fashion',
-compAccess='Computer & Accessories',
-autoMobile='Automobile',
-kidtoys='Kids Toys',
-sports='Sports',
-jewelry='Jewelry',
-cellphone='Cell Phone & Tab',
-funiture='Furniture';
+    menClothingFashion = 'Men Clothing Fashion',
+    compAccess = 'Computer & Accessories',
+    autoMobile = 'Automobile',
+    kidtoys = 'Kids Toys',
+    sports = 'Sports',
+    jewelry = 'Jewelry',
+    cellphone = 'Cell Phone & Tab',
+    funiture = 'Furniture';
+
+// ------Item Detail page text
+
+const videos = ' Videos',
+reviews='Reviews',
+sellerPolicy='Seller Policy',
+returnPolicy='Return Policy',
+supportPolicy='Support Policy'
+;
