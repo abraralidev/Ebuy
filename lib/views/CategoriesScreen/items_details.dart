@@ -235,7 +235,7 @@ class ItemsDetails extends StatelessWidget {
                   20.heightBox,
                   'Product may you also like'.text.fontFamily(bold).make(),
                   20.heightBox,
-   //---------------------Copy of widgets from home screen---------------------------------               
+                  //---------------------Copy of widgets from home screen---------------------------------
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(

@@ -84,3 +84,16 @@ returnPolicy,
 supportPolicy
 
 ];
+
+// ------Profile page text
+const profilebutttonlist = [
+  wishlist,
+  orders,
+  massages
+];
+
+const profilebuttoniscons = [
+  icOrder,
+  icOrder,
+  icMessages,
+];

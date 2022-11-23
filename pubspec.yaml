@@ -39,6 +39,7 @@ dependencies:
   velocity_x:
   get: ^4.6.5
   firebase_core: ^2.1.1
+  flutter_svg: ^1.1.6
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -51,8 +51,10 @@ const womencloth = 'Women Clothing',
 // ------Item Detail page text
 
 const videos = ' Videos',
-reviews='Reviews',
-sellerPolicy='Seller Policy',
-returnPolicy='Return Policy',
-supportPolicy='Support Policy'
-;
+    reviews = 'Reviews',
+    sellerPolicy = 'Seller Policy',
+    returnPolicy = 'Return Policy',
+    supportPolicy = 'Support Policy';
+
+// ------Profile page text
+const wishlist = 'My Wishlist', orders= 'My Orders', massages= 'Massages';
