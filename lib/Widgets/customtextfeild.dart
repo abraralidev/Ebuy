@@ -2,13 +2,14 @@
 
 import 'package:ebuy/consts/consts.dart';
 
-Widget Customtextfeild(String? hint, String? title, Controller) {
+Widget Customtextfeild(bool isPass, String? hint, String? title, Controller) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       title!.text.color(redColor).fontFamily(semibold).size(16).make(),
       5.heightBox,
       TextFormField(
+        obscureText: isPass,
         controller: Controller,
         decoration:  InputDecoration(
           hintText: hint,

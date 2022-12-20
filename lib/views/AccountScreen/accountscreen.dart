@@ -1,7 +1,9 @@
 import 'package:ebuy/Widgets/background.dart';
 import 'package:ebuy/consts/list.dart';
+import 'package:ebuy/controllers/auth_controller.dart';
 
 import '../../consts/consts.dart';
+import '../Auth/loginscreen.dart';
 import 'components/detail_card.dart';
 
 class AccountScreen extends StatelessWidget {
@@ -46,7 +48,10 @@ class AccountScreen extends StatelessWidget {
                       style: OutlinedButton.styleFrom(
                         side: const BorderSide(color: Colors.white),
                       ),
-                      onPressed: () {},
+                      onPressed: () async {
+                        await Get.put(AuthController()).signOutMethod(context);
+                        Get.offAll(() => const LoginScreen());
+                      },
                       child: 'Logout'.text.fontFamily(semibold).white.make())
                 ],
               ),

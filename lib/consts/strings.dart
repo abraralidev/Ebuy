@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 const appname = "ebuy";
 const appversion = "Version 1.0.0";
 const credits = "@abraralidev";
@@ -20,7 +22,9 @@ const home = 'Home';
 const cart = 'Cart';
 const account = 'Account';
 const categories = 'Categories';
-
+const SignUpsccuess = 'Sign Up Successfull';
+const loginSccuess = 'Login Successfull';
+const logout = 'Logout Successfull';
 // home screen strings
 const search = 'Search Anything....',
     todaydeals = 'Today\'s Deals',

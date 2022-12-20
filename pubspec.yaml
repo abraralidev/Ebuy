@@ -40,6 +40,10 @@ dependencies:
   get: ^4.6.5
   firebase_core: ^2.1.1
   flutter_svg: ^1.1.6
+  google_sign_in: ^5.4.2
+  firebase_auth: ^4.2.0
+  cloud_firestore: ^4.2.0
+  firebase_storage: ^11.0.7
 dev_dependencies:
   flutter_test:
     sdk: flutter

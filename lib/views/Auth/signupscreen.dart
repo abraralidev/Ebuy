@@ -1,9 +1,12 @@
 import 'package:ebuy/Widgets/background.dart';
 
+import 'package:ebuy/views/home/home.dart';
+
 import '../../Widgets/applogo.dart';
 import '../../Widgets/custombutton.dart';
 import '../../Widgets/customtextfeild.dart';
 import '../../consts/consts.dart';
+import '../../controllers/auth_controller.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -16,6 +19,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
   bool? ischeck = false;
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _retypepasswordController =
+      TextEditingController();
+  var controller = Get.put(AuthController());
+
   @override
   Widget build(BuildContext context) {
     return Background(Scaffold(
@@ -32,27 +40,31 @@ class _SignUpScreenState extends State<SignUpScreen> {
           Column(
             children: [
               Customtextfeild(
+                false,
                 namehint,
                 name,
-                _emailController,
+                _nameController,
               ),
               10.heightBox,
               Customtextfeild(
+                false,
                 emailhint,
                 email,
-                _passwordController,
-              ),
-              10.heightBox,
-              Customtextfeild(
-                passwordhint,
-                password,
                 _emailController,
               ),
               10.heightBox,
               Customtextfeild(
+                true,
+                passwordhint,
+                password,
+                _passwordController,
+              ),
+              10.heightBox,
+              Customtextfeild(
+                true,
                 passwordhint,
                 retypepassword,
-                _passwordController,
+                _retypepasswordController,
               ),
               10.heightBox,
               Row(
@@ -104,7 +116,26 @@ class _SignUpScreenState extends State<SignUpScreen> {
               10.heightBox,
               // Add your widgets CustomButton
               CustomButton(
-                () {},
+                () async {
+                  if (ischeck != false) {
+                    try {
+                      await controller
+                          .signUpMethod(
+                              _emailController.text, _passwordController.text,BuildContext)
+                          .then((value) => controller.storeUserData(
+                              _nameController.text,
+                              _passwordController.text,
+                              _emailController.text))
+                          .then((value) {
+                        VxToast.show(context, msg: SignUpsccuess);
+                        Get.offAll(const Home());
+                      });
+                    } catch (e) {
+                      auth.signOut();
+                      VxToast.show(context, msg: e.toString());
+                    }
+                  }
+                },
                 signup,
                 ischeck == true ? redColor : fontGrey,
                 Colors.white,

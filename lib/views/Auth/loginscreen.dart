@@ -2,6 +2,7 @@
 
 import 'package:ebuy/consts/consts.dart';
 import 'package:ebuy/consts/list.dart';
+import 'package:ebuy/controllers/auth_controller.dart';
 import 'package:ebuy/views/Auth/signupscreen.dart';
 import 'package:ebuy/views/home/home.dart';
 import '../../Widgets/applogo.dart';
@@ -17,8 +18,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
+ 
+  var controller = Get.put(AuthController());
   @override
   Widget build(BuildContext context) {
     return Background(Scaffold(
@@ -35,15 +36,17 @@ class _LoginScreenState extends State<LoginScreen> {
           Column(
             children: [
               Customtextfeild(
+                 false,
                 emailhint,
                 email,
-                _emailController,
+                controller.emailController,
               ),
               10.heightBox,
               Customtextfeild(
+                 true,
                 passwordhint,
                 password,
-                _passwordController,
+                controller.passwordController,
               ),
               TextButton(
                   onPressed: () {},
@@ -54,8 +57,15 @@ class _LoginScreenState extends State<LoginScreen> {
               10.heightBox,
               // Add your widgets CustomButton
               CustomButton(
-                () {
-                  Get.to(() => const Home());
+                ()async {
+                 await controller.loginMethod(context).then((value) {
+                  if (value!=null) {
+
+                    VxToast.show(context, msg: loginSccuess);
+                    Get.offAll(() => const Home());
+                  }
+                 });
+                  
                 },
                 login,
                 redColor,
