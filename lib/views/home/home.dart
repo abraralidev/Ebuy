@@ -44,7 +44,7 @@ class Home extends StatelessWidget {
       const HomeScreen(),
       const CategoriesScreen(),
       const CartScreen(),
-      const AccountScreen(),
+       const AccountScreen(),
     ];
     return Scaffold(
       bottomNavigationBar: Obx(() => BottomNavigationBar(

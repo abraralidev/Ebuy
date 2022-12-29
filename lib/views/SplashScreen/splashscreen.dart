@@ -1,5 +1,7 @@
 
 import 'package:ebuy/consts/consts.dart';
+import 'package:ebuy/views/home/home.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import '../../Widgets/applogo.dart';
 import '../Auth/loginscreen.dart';
 
@@ -18,8 +20,14 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   changescreen() async {
-    await Future.delayed(const Duration(seconds: 3), () {
-      Get.to(() => const LoginScreen());
+    await Future.delayed(const Duration(seconds: 2), () async{
+      if (FirebaseAuth.instance.currentUser != null) {
+        Route route = MaterialPageRoute(builder: (_) => const Home());
+        Navigator.pushReplacement(context, route);
+      } else {
+        Route route = MaterialPageRoute(builder: (_) => const LoginScreen());
+        Navigator.pushReplacement(context, route);
+      }
     });
   }
 

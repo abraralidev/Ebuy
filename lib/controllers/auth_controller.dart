@@ -6,18 +6,22 @@ import 'package:firebase_auth/firebase_auth.dart';
 import '../consts/consts.dart';
 
 class AuthController extends GetxController {
-  var emailController = TextEditingController();
-  var passwordController = TextEditingController();
-  Future<UserCredential?> loginMethod(
-       context) async {
-    UserCredential? _userCredential;
-    try {
-      await auth.signInWithEmailAndPassword(email: emailController.text, password: passwordController.text);
-    } on FirebaseAuthException catch (e) {
-      VxToast.show(context, msg: e.toString());
-    }
-    return _userCredential;
-  }
+
+var isloading = false.obs;
+
+  // var emailController = TextEditingController();
+  // var passwordController = TextEditingController();
+  // Future<UserCredential?> loginMethod(context) async {
+  //   UserCredential? _userCredential;
+  //   try {
+  //     await auth.signInWithEmailAndPassword(
+  //         email: emailController.text, password: passwordController.text);
+  //   } on FirebaseAuthException catch (e) {
+  //     VxToast.show(context, msg: e.toString());
+  //   }
+  //   return _userCredential;
+  // }
+  
 
 //--------------------------------------SignUp------------------------------------------
   Future<UserCredential?> signUpMethod(email, password, context) async {
@@ -40,6 +44,11 @@ class AuthController extends GetxController {
       'password': password,
       'email': email,
       'imageUrl': '',
+      'id': currentUser!.uid,
+      'wishlist_count': '00',
+      'cart_count': '00',
+      "order_count": '00',
+
     });
   }
 

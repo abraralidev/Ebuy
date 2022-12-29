@@ -11,7 +11,7 @@ Widget Customtextfeild(bool isPass, String? hint, String? title, Controller) {
       TextFormField(
         obscureText: isPass,
         controller: Controller,
-        decoration:  InputDecoration(
+        decoration: InputDecoration(
           hintText: hint,
           hintStyle: const TextStyle(
             color: textfieldGrey,
