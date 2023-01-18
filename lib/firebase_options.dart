@@ -44,40 +44,40 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAvEK5PfTWd3YyItalVzn2D0TZllj9zyEU',
-    appId: '1:900153953394:web:633a5268422d048f1ac6eb',
-    messagingSenderId: '900153953394',
-    projectId: 'ebuy-21912',
-    authDomain: 'ebuy-21912.firebaseapp.com',
-    storageBucket: 'ebuy-21912.appspot.com',
-    measurementId: 'G-1J600KLDLM',
+    apiKey: 'AIzaSyCRfXCwoxFfBOfjKin6DbLtZPY52GFCtIE',
+    appId: '1:923496674989:web:ea8c048987fa949ae43824',
+    messagingSenderId: '923496674989',
+    projectId: 'ebuy-96df3',
+    authDomain: 'ebuy-96df3.firebaseapp.com',
+    storageBucket: 'ebuy-96df3.appspot.com',
+    measurementId: 'G-GS3HBY16XQ',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCKtxkLKRW7CyvDdcXEP2--iDEPLusohhU',
-    appId: '1:900153953394:android:ee0edb11bc64479a1ac6eb',
-    messagingSenderId: '900153953394',
-    projectId: 'ebuy-21912',
-    storageBucket: 'ebuy-21912.appspot.com',
+    apiKey: 'AIzaSyDnnvzJxRSbFM45qZIx3A5X22U9aKEzddA',
+    appId: '1:923496674989:android:67591a18c41fc089e43824',
+    messagingSenderId: '923496674989',
+    projectId: 'ebuy-96df3',
+    storageBucket: 'ebuy-96df3.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDx2XyMVrjEiWuqeuJkrhf0gTmWvIrtGm0',
-    appId: '1:900153953394:ios:c052aa1570e6cc801ac6eb',
-    messagingSenderId: '900153953394',
-    projectId: 'ebuy-21912',
-    storageBucket: 'ebuy-21912.appspot.com',
-    iosClientId: '900153953394-blmqtcvppk2i7bi2d85o3leernjvdepe.apps.googleusercontent.com',
+    apiKey: 'AIzaSyDWPkWmAorOM81qSCeUuBszLB7obiGO-n8',
+    appId: '1:923496674989:ios:32eff95c014dd63de43824',
+    messagingSenderId: '923496674989',
+    projectId: 'ebuy-96df3',
+    storageBucket: 'ebuy-96df3.appspot.com',
+    iosClientId: '923496674989-uec8c1dp5oddq87a66lbma0k4pimrnaj.apps.googleusercontent.com',
     iosBundleId: 'com.example.ebuy',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDx2XyMVrjEiWuqeuJkrhf0gTmWvIrtGm0',
-    appId: '1:900153953394:ios:c052aa1570e6cc801ac6eb',
-    messagingSenderId: '900153953394',
-    projectId: 'ebuy-21912',
-    storageBucket: 'ebuy-21912.appspot.com',
-    iosClientId: '900153953394-blmqtcvppk2i7bi2d85o3leernjvdepe.apps.googleusercontent.com',
+    apiKey: 'AIzaSyDWPkWmAorOM81qSCeUuBszLB7obiGO-n8',
+    appId: '1:923496674989:ios:32eff95c014dd63de43824',
+    messagingSenderId: '923496674989',
+    projectId: 'ebuy-96df3',
+    storageBucket: 'ebuy-96df3.appspot.com',
+    iosClientId: '923496674989-uec8c1dp5oddq87a66lbma0k4pimrnaj.apps.googleusercontent.com',
     iosBundleId: 'com.example.ebuy',
   );
 }

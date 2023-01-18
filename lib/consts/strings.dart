@@ -61,4 +61,4 @@ const videos = ' Videos',
     supportPolicy = 'Support Policy';
 
 // ------Profile page text
-const wishlist = 'My Wishlist', orders= 'My Orders', massages= 'Massages';
+const wishlist = 'My Wishlist', orders= 'My Orders', massages= 'Massages', oldpass='Old Password', newpass='New Password';

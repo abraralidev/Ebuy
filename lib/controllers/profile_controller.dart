@@ -4,6 +4,7 @@ import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ebuy/consts/consts.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/services.dart';
 import 'package:path/path.dart';
@@ -46,5 +47,19 @@ class ProfileController extends GetxController {
 
   // textfeild controllers
   final TextEditingController namecontroller = TextEditingController();
-  final TextEditingController passwordcontroller = TextEditingController();
+  final TextEditingController oldpasswordcontroller = TextEditingController();
+  final TextEditingController newpasswordcontroller = TextEditingController();
+
+changeAuthPassword(email, password, newpassword, context) async {
+    final cred= EmailAuthProvider.credential(email: email     , password: password);
+  await currentUser!.reauthenticateWithCredential(cred).then((value){
+    currentUser!.updatePassword(newpassword)
+  .catchError((e){
+      VxToast.show(context, msg: e.toString());
+    });
+  }).catchError((e){
+    VxToast.show(context, msg: e.toString());
+  });
+  }
+
 }

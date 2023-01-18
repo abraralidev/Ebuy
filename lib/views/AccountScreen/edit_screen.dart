@@ -23,20 +23,23 @@ class EditProfileScreen extends StatelessWidget {
       appBar: AppBar(),
       body: Obx(
         () => Column(mainAxisSize: MainAxisSize.min, children: [
-       data['imageurl']==''&&   controller.profileImagePath.isEmpty
+          data['imageurl'] == '' && controller.profileImagePath.isEmpty
               ? Image.asset(
                   imgProfile,
-                  width: 150,
+                  width: 100,
                   fit: BoxFit.cover,
                 ).box.roundedFull.clip(Clip.antiAlias).make()
-              :
-              data['imageurl']!=''&&   controller.profileImagePath.isEmpty?
-                Image.network(data['imageurl'],width: 150,fit: BoxFit.cover,).box.roundedFull.clip(Clip.antiAlias).make()
-               :Image.file(
-                  File(controller.profileImagePath.value),
-                  width: 150,
-                  fit: BoxFit.cover,
-                ).box.roundedFull.clip(Clip.antiAlias).make(),
+              : data['imageurl'] != '' && controller.profileImagePath.isEmpty
+                  ? Image.network(
+                      data['imageurl'],
+                      width: 100,
+                      fit: BoxFit.cover,
+                    ).box.roundedFull.clip(Clip.antiAlias).make()
+                  : Image.file(
+                      File(controller.profileImagePath.value),
+                      width: 100,
+                      fit: BoxFit.cover,
+                    ).box.roundedFull.clip(Clip.antiAlias).make(),
           10.heightBox,
           CustomButton(() {
             try {
@@ -48,23 +51,49 @@ class EditProfileScreen extends StatelessWidget {
           const Divider(),
           20.heightBox,
           Customtextfeild(false, namehint, name, controller.namecontroller),
+          10.heightBox,
           Customtextfeild(
-              false, passwordhint, password, controller.passwordcontroller),
+              true, passwordhint, oldpass, controller.oldpasswordcontroller),
+          10.heightBox,
+          Customtextfeild(
+              true, passwordhint, newpass, controller.newpasswordcontroller),
           20.heightBox,
           controller.isloading.value
               ? const Center(
-                  child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation(redColor)),
+                  child: CircularProgressIndicator(
+                      valueColor: AlwaysStoppedAnimation(redColor)),
                 )
               : SizedBox(
                   width: context.screenWidth - 40,
                   child: CustomButton(() async {
                     controller.isloading(true);
-                    await controller.uploadImage();
-                    await controller.updateProfile(
-                        controller.namecontroller.text,
-                        controller.passwordcontroller.text,
-                        controller.profileImagePath.value);
-                    VxToast.show(context, msg: 'Profile Updated');
+
+                    //condition if image not selected
+                    if (controller.profileImagePath.isNotEmpty) {
+                      await controller.uploadImage();
+                    } else {
+                      controller.profileImagePath.value = data['imageurl'];
+                    }
+
+//condition if old password matches database password
+                    if (controller.oldpasswordcontroller.text ==
+                        data['password']) {
+                      await controller.changeAuthPassword(
+                          currentUser!.email,
+                           controller.oldpasswordcontroller.text,
+                          controller.newpasswordcontroller.text,
+                          context);
+
+                      await controller.updateProfile(
+                          controller.namecontroller.text,
+                          controller.newpasswordcontroller.text,
+                          controller.profileImagePath.value);
+                      VxToast.show(context, msg: 'Profile Updated');
+                    } else {
+                      VxToast.show(context, msg: 'Old Password is incorrect');
+
+                      controller.isloading(false);
+                    }
                   }, 'Save', redColor, whiteColor)),
         ])
             .box

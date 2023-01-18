@@ -44,8 +44,8 @@ class AccountScreen extends StatelessWidget {
                           ),
                           onPressed: () {
                             controller.namecontroller.text = data['name'];
-                            controller.passwordcontroller.text =
-                                data['password'];
+                            // controller.passwordcontroller.text =
+                            //     data['password'];
 
                             Get.to(() => EditProfileScreen(
                                   data: data,
