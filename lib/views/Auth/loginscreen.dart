@@ -1,4 +1,4 @@
-// ignore_for_file: unused_field
+// ignore_for_file: unused_field, body_might_complete_normally_catch_error
 
 import 'package:ebuy/consts/consts.dart';
 import 'package:ebuy/consts/list.dart';
