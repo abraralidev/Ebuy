@@ -4,9 +4,11 @@ Ebuy is a An e-commerce app is a software application that allows businesses to 
 
 ## Prerequisites
 
-Before getting started with [Project Name], you'll need to have the following software installed on your computer:
+Before getting started with ebuy, you'll need to have the following software installed on your computer:
 
-- [List of prerequisites]
+- Flutter SDK
+- VS code
+- Android Studio
 
 ## Installing Ebuy
 
