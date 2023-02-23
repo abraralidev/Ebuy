@@ -1,6 +1,6 @@
 # Contributing to Ebuy
 
-We welcome contributions from the community and are grateful for your efforts to improve [Project Name]. Whether it's fixing a bug, adding a feature, or improving documentation, we appreciate your help.
+We welcome contributions from the community and are grateful for your efforts to improve Ebuy. Whether it's fixing a bug, adding a feature, or improving documentation, we appreciate your help.
 
 ## How to Contribute
 
